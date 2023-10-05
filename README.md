@@ -12,3 +12,25 @@ page](https://docs.github.com/en/get-started/writing-on-github/working-with-adva
 might help with the notation for mathematical expressions.
 
 $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0$
+
+# Proof: 
+$f(n) \in O(log_2(n))$:
+
+$\exists c_1, n_0: f(n) \in c_1 \cdot \log_{2} n \forall n \geq n_0$
+
+$\log_{b}(a) = \log_{c}(a) / \log_{c}(b)$ thus $\log_{5}(n) = \log_{2}(n) / \log_{2} 5$
+
+$f(n) \in (c / \log_{2}(5)) \cdot \log_{2}(n)$ but $(c / \log_{2}(5))$ is just a constant, let's call it K.
+Thus there exists a $c_1$ and $n_0$ such that $f(n) \in K \cdot \log_{2}(n) \forall n \geq n_0$
+
+
+Furthermore $f(n) \in O(\log{5}(n))$:
+
+$\exists c_2, n_0: f(n) \in c_2 \cdot \log_{5} n \forall n \geq n_0$
+
+$\log_{b}(a) = \log_{c}(a) / \log_{c}(b)$ thus $\log_{2}(n) = \log_{5}(n) / \log_{5}(2)$
+
+$f(n) \in (c / \log_{5}(2)) \cdot \log_{5}(n)$ but $(c / \log_{5}(2))$ is just a constant, let's call it N.
+Thus there exists a $c_2$ and $n_0$ such that $f(n) \in N \cdot \log_{5}(n) \forall n \geq n_0$
+
+Therefore $O(\log_{2}(n)) = O(\log_{5}(n))$ asymptotically. 
